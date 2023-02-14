@@ -1,1 +1,8 @@
-# two-bots-chat
+# Let two GPT3 chat bots talk to each other
+
+This is a simple example of how to use the [OpenAI GPT3 API](https://beta.openai.com/docs/api-reference/introduction) to let two chat bots talk to each other.
+
+## Running the example
+```bash
+streamlit run chat.py
+```
