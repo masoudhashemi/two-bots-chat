@@ -11,3 +11,6 @@ Create a `config.py` file with the following content:
 ```python
 OPENAI_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
+
+## Example output
+![Example output](example.png)

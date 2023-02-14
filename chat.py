@@ -54,7 +54,7 @@ while sum([len(message) for sender, message in st.session_state.chat_history]) >
         st.session_state.chat_history.pop(0)
 
 # Create two columns to display the user input and bot response
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 # Create a button to submit the message
 with col1:
@@ -86,6 +86,12 @@ with col1:
 with col2:
     if st.button("Clear History"):
         reset_chat_history()
+
+# Clear the history if the user clicks the button
+with col3:
+    if st.button("Remove Last Entry"):
+        if "Rule" not in st.session_state.chat_history[-1][0]:
+            st.session_state.chat_history.pop(-1)
 
 # Display the chat history
 st.markdown("### Chat History")
