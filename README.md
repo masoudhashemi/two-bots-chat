@@ -6,3 +6,8 @@ This is a simple example of how to use the [OpenAI GPT3 API](https://beta.openai
 ```bash
 streamlit run chat.py
 ```
+
+Create a `config.py` file with the following content:
+```python
+OPENAI_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
