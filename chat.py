@@ -59,23 +59,29 @@ col1, col2, col3 = st.columns(3)
 # Create a button to submit the message
 with col1:
     if st.button("Send"):
-        if bot1_input != st.session_state.prev_bot1_input:
+        # Add the user's message to the chat history
+        bot1_changed = bot1_input != st.session_state.prev_bot1_input
+        if bot1_changed:
+            bot1_changed = True
             st.session_state.chat_history.append(("Rule for Chatbot1", bot1_input))
             st.session_state.prev_bot1_input = bot1_input
 
         # Generate a response from the Chatbot1
-        prompt = "".join([f"{sender}: {message}\n" for sender, message in st.session_state.chat_history])
+        prompt = "".join([f"{sender}: {message}\n" for sender, message in st.session_state.chat_history if "Rule for Chatbot2" not in sender])
         bot1_response = generate(prompt + "\nChatbot1: ")
 
         # Add the bot1's response to the chat history
         st.session_state.chat_history.append(("Chatbot1", bot1_response))
 
-        if bot2_input != st.session_state.prev_bot2_input:
+        # Add the user's message to the chat history
+        bot2_changed = bot2_input != st.session_state.prev_bot2_input
+        if bot2_changed:
+            bot2_changed = True
             st.session_state.chat_history.append(("Rule for Chatbot2", bot2_input))
             st.session_state.prev_bot2_input = bot2_input
 
         # Generate a response from the Chatbot2
-        prompt = "".join([f"{sender}: {message}\n" for sender, message in st.session_state.chat_history])
+        prompt = "".join([f"{sender}: {message}\n" for sender, message in st.session_state.chat_history if "Rule for Chatbot1" not in sender])
         bot2_response = generate(prompt + "\nChatbot2: ")
 
         # Add the bot2's response to the chat history

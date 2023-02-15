@@ -13,4 +13,8 @@ OPENAI_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 ## Example output
-![Example output](example.png)
+![Example output](images/example.png)
+
+| Honest | Cheater |
+| --- | --- |
+| ![Honest](images/honest.png) | ![Cheater](images/cheater.png) |
