@@ -8,6 +8,9 @@ from config import OPENAI_API_KEY
 openai.api_key = OPENAI_API_KEY
 
 
+# This code is used to call the OpenAI API to generate a sentence based on a prompt.
+# The function takes in the prompt and returns the generated sentence.
+# The function takes in a string and returns a string.
 def generate(prompt):
     model = "text-davinci-003"
     params = {
