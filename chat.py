@@ -67,7 +67,13 @@ with col1:
             st.session_state.prev_bot1_input = bot1_input
 
         # Generate a response from the Chatbot1
-        prompt = "".join([f"{sender}: {message}\n" for sender, message in st.session_state.chat_history if "Rule for Chatbot2" not in sender])
+        prompt = "".join(
+            [
+                f"{sender}: {message}\n"
+                for sender, message in st.session_state.chat_history
+                if "Rule for Chatbot2" not in sender
+            ]
+        )
         bot1_response = generate(prompt + "\nChatbot1: ")
 
         # Add the bot1's response to the chat history
@@ -81,7 +87,13 @@ with col1:
             st.session_state.prev_bot2_input = bot2_input
 
         # Generate a response from the Chatbot2
-        prompt = "".join([f"{sender}: {message}\n" for sender, message in st.session_state.chat_history if "Rule for Chatbot1" not in sender])
+        prompt = "".join(
+            [
+                f"{sender}: {message}\n"
+                for sender, message in st.session_state.chat_history
+                if "Rule for Chatbot1" not in sender
+            ]
+        )
         bot2_response = generate(prompt + "\nChatbot2: ")
 
         # Add the bot2's response to the chat history
